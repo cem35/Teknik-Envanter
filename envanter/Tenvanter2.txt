@@ -1,0 +1,46 @@
+soru2
+
+2 farklı event tablosu oluşuturulur. 
+Event_Producer aynı anda çalışmaya başlayarak bu tablolar doldurulmaya başlanır.  
+
+
+ASYNC Event_Producer
+	For i = 0 to 200
+		Event e1 = GenerateRandomEvent()
+		Event e2 = GenerateRandomEvent()
+		PutEventFirst(e1)
+		PutEventSecond(e2)
+END
+
+
+ASYNC Event_Consumer
+	Event ef1=ReadFirstEvent(0)
+	Event ef2=ReadSecondEvent(0)
+	bool flag = true
+
+	For i=1 to 200
+		Event ef3 = ReadFirstEvent(i)
+		Event ef4 = ReadSecondEvent(i)	
+		
+		if(ef2.Priority != ef3.Priority && flag == false)
+			flag = true
+
+		if(ef1.Priority == ef2.Priorty == ef3.Priorty && flag)
+			Alert(ef1,ef2,ef3)
+			flagFirst = false
+
+		else if(ef2.Priority == ef3.Priority == ef4.Priority && flag)
+			Alert(ef2, ef3, ef4)
+			flagFirst = false
+
+		ef1 = ef3
+		ef2 = ef4
+END
+
+
+
+/* Bir tablodan aynı anda birden fazla işlem yapılmaya izin verilmediği için iki farklı tablo oluşturulur. Bu tablolara sırayla veriler eklenir. İlk veri 1. tabloya, ikinci veri 2. tabloya, üçüncü veri ilk tabloya gibi.
+	Okuma işleminde ise  ilk seferinde olduğu gibi iki tablodan veri okunur. Veri okuma ve yazma sırası üst üste geldiğinde (producer ve consumer aynı anda tabloya erişmeye çalıştığında consumer öncelikli olduğu için tablodan veriyi öncelikli olarak okur.) 
+	Okuma işleminde bir observer oluşturulur ve Alert durumları gözlenir. Okuma ve yazma kodları asynchronous olarak çalışır.
+
+  */

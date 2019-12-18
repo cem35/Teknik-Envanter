@@ -1,0 +1,51 @@
+[
+	{
+		"id": "100",
+		"name": "Gökhan Türkmen",
+		"tckn": "29292929292",
+		"phone": "05111111111",
+		"birthPlace":"Kayseri",
+		"itemNo": "12"
+	},
+	{
+		"id": "101",
+		"name": "Selim Yıldız",
+		"tckn": "29292929293",
+		"phone": "05111111114",
+		"birthPlace":"İzmir",
+		"itemNo": "14"
+	},
+	{
+		"id": "102",
+		"name": "Orhan Işık",
+		"tckn": "29292929294",
+		"phone": "05111111115",
+		"birthPlace":"Manisa",
+		"itemNo": "15"
+	},
+	{
+		"id": "200",
+		"name": "Fatma Turunç",
+		"tckn": "29292929291",
+		"phone": "05111111122",
+		"birthPlace":"Adana",		
+		"itemNo": "16"	
+	},
+	{
+		"id": "201",
+		"name": "Hasan Özsoy",
+		"tckn": "29292929295",
+		"phone": "05111111126",
+		"birthPlace":"Aydın",		
+		"itemNo": "17"	
+	},
+	{
+		"id": "202",
+		"name": "Özge Fırat",
+		"tckn": "29292929296",
+		"phone": "05111111127",
+		"birthPlace":"Balıkesir",		
+		"itemNo": "18"	
+	}
+
+]
